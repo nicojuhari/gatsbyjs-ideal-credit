@@ -1,0 +1,146 @@
+.header-block {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .text{
+        margin-left: 20px;
+        font-size: 24px;
+        text-transform: uppercase;
+    }
+
+    img{
+        max-width: 70px;
+        width: 100%;
+        
+        @media screen and (min-width: 768px){
+        max-width: 95px;
+        }
+    }
+}
+
+.header-menu {
+
+    .menu-item {
+      padding: 20px;
+      transition: 0.8s;
+      
+      &:hover {
+        background-color: $mainColorDark;
+      }
+    }
+
+    .store-phone {
+      padding: 20px;
+      display:flex;
+      &__icon {
+        width:20px;
+      }
+
+      &__number {
+        margin-left: 5px;
+      }
+    }
+}
+
+.mobile-menu{
+
+  .menu-item {
+    padding: 20px;
+    color: $lightGrey;
+  }
+
+  &__icon {
+    cursor: pointer;
+    float: right;
+    padding: 20px;
+    background-color: $mainColorDark;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .icon-line {
+      height: 2px;
+      background: $lightGrey;
+      opacity: 0.8;
+      width: 20px;
+      border-radius: 3px;
+      margin: 4px 0;
+      transition: all 0.8s ease-in;
+      display: block;
+    }
+  }
+
+  &.active{
+
+    .mobile-menu__content {
+      transform: translateX(0);
+    }
+
+    .mobile-menu-overlay {
+      background-color: transparent;
+      width: 100vw;
+      position: absolute;
+      height: 100vh;
+      left: 0;
+      top: 0;
+    }
+
+  }
+
+  &__content {
+    flex-direction: column;
+    right: 0;
+    background-color: $mainColorDark;
+    transform: translateX(300px);
+    height: 100%;
+    width:300px;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    overflow-x: hidden;
+    transition: 0.9s;
+    display: flex;
+    box-shadow: -3px 0 12px 0 $mainColorLight;
+
+    .menu-item:not(:last-child), 
+    .menu-item:not(:first-child) {
+      border-bottom: 1px solid $darkGrey;
+    }
+
+    .menu-item:hover{
+      background-color: $mainColor;
+      border-bottom-color: transparent;
+    }
+  }
+
+
+}
+
+
+    .close-menu {
+        position: relative;
+        height: 80px;
+
+        &__icon{
+            font-size: 30px;
+            position: absolute;
+            cursor:pointer;
+            left: 20px;
+            top: 25px;
+            color: $lightGrey;
+            width: 40px;
+            height: 40px;
+            border-radius: 30px;
+            background-color: $mainColor;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+
+        }
+    }

@@ -1,0 +1,15 @@
+.cta-title {
+    text-align:center;
+    margin-bottom: 10px;
+}
+
+.cta-phone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .phone-icon {
+        margin-right: 10px;
+        width: 36px;
+    }
+}

@@ -1,0 +1,56 @@
+.contact-row{
+            &>div {
+                width: 100%;
+
+                &:first-child {
+                    margin-right: 15px;
+                }
+                &:last-child {
+                    margin-left: 15px;
+                }
+                
+                @media screen and (min-width:768px){
+                    margin: 0;
+                }
+
+            }
+        .contact-details {
+            
+            @media screen and (min-width: 768px) {
+               
+                margin-right: 15px;
+                
+            }
+
+        }
+        
+        .contact-form {
+            margin-bottom: 30px;
+
+            .form-control {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 16px;
+            }
+
+            input, button {
+                height: 40px;
+                width: 100%;
+                outline: none;
+            }
+
+            button {
+                background-color: $logoColor;
+                color: $white;
+                border: 0;
+                font-size: 18px;
+            }
+
+            textarea {
+                width: 100%;
+                height: 120px;
+            }
+        }
+
+}
+

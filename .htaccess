@@ -1,0 +1,7 @@
+RewriteEngine On
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://idealcredit.md/$1 [R,L]
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^www.idealcredit.md [NC]
+RewriteRule ^(.*)$ https://idealcredit.md/$1 [L,R=301]
