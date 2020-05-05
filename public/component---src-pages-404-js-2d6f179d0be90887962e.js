@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[4],{Lwsw:function(n,e,t){},w2l6:function(n,e,t){"use strict";t.r(e),t.d(e,"default",(function(){return i}));var a=t("q1tI"),c=t.n(a),o=t("Wbzz");t("Lwsw");function i(){return c.a.createElement("div",{className:"page-not-found"},c.a.createElement("div",{className:"page-not-found__content"},c.a.createElement("h3",null,"Pagina nu a fost găsită"),c.a.createElement(o.Link,{to:"/"},"Apasă aici")))}}}]);
+//# sourceMappingURL=component---src-pages-404-js-2d6f179d0be90887962e.js.map

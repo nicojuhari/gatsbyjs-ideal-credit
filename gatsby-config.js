@@ -16,13 +16,20 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-plugin-hotjar`,
+      options: {
+        id: 1797461,
+        sv: 6
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `ideal-credit`,
-        short_name: `ideal-credit`,
+        name: `Ideal Credit`,
+        short_name: `Ideal Credit`,
         start_url: `/`,
         background_color: `#333`,
-        theme_color: `#FF9A00`,
+        theme_color: `#333`,
         display: `minimal-ui`,
         icon: `src/static/ideal-credit-logo.jpg`, // This path is relative to the root of the site.
       },

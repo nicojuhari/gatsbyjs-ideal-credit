@@ -1,12 +1,15 @@
 .contact-row{
             &>div {
                 width: 100%;
+                @media screen and (min-width: 768px) {
 
-                &:first-child {
-                    margin-right: 15px;
-                }
-                &:last-child {
-                    margin-left: 15px;
+                    &:first-child {
+                        margin-right: 15px;
+                    }
+                    &:last-child {
+
+                        margin-left: 15px;
+                    }
                 }
                 
                 @media screen and (min-width:768px){

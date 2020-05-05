@@ -1,14 +1,14 @@
-import React from "react"
+import React from 'react';
+import { Link } from "gatsby";
+import './../styles/pages/notFoundPage.scss';
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-
-const NotFoundPage = () => (
-  <Layout>
-    <SEO title="404: Not found" />
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-  </Layout>
-)
-
-export default NotFoundPage
+export default function PageNotFound() {
+    return (
+        <div className='page-not-found'>
+            <div className='page-not-found__content'>
+                <h3>Pagina nu a fost găsită</h3>
+                <Link to='/'>Apasă aici</Link>
+            </div>
+        </div>
+    )
+}
