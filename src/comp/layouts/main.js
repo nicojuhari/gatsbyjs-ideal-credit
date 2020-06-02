@@ -46,7 +46,11 @@ const Main = props => (
                     {
                     name: `twitter:description`,
                     content: props.info.description,
-                    }
+                    },
+                    {
+                    name: `google-site-verification`,
+                    content: 'xSvHXCUVs_GmLMJ17te-PeWngkTtzV-pDoMRviDCcV0',
+                    },
                 ].concat()} 
             defer={false} 
         />
