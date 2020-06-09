@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import MobileMenu from "./MobileMenu";
 
-import logo from '../../../static/ideal-credit-logo.png';
+import logo from '../../../static/ideal-credit-logo.jpg';
 import phoneIcon from '../../../static/phone-icon.svg';
 
 

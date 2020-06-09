@@ -1,7 +1,10 @@
 import React from "react"
 import MainLayout from '../comp/layouts/main';
 
-import regulament from '../static/regulament_ideal_credit.pdf';
+import regAdministrare from '../static/docs/Regulament_Administrare_Ideal_Credit.pdf';
+import regPrestareServicii from '../static/docs/Regulament_Prestare_Servicii_Ideal_Credit.pdf';
+import regSolutionare from '../static/docs/Regulament_Solutionarea_Pretentiilor_Ideal_Credit.pdf';
+import ordinAprobare from '../static/docs/Ordin_Regulamente_Ideal_Credit.pdf';
 
 export default function AboutPage() {
     const seo = {
@@ -35,7 +38,15 @@ export default function AboutPage() {
                     suma împrumuturilor încep de la 1000 lei pînă la 300 000 lei.</p>
                 </div>
                 <div className="regulamente">
-                    <a href={regulament}>1. Regulament Ideal Credit</a>
+                    <h2>Regulamente Interne al OCN Ideal Credit</h2>
+                    <div className="regulamente-links">
+                        <a href={regAdministrare}>1. Regulamentul de Administrare</a>
+                        <a href={regPrestareServicii}>2. Regulamentul de Prestare a Serviciilor</a>
+                        <a href={regSolutionare}>3. Regulamentul de Soluționare a Petițiilor</a>
+                    </div>
+                    <div className="regulamente-ordin">
+                        <a href={ordinAprobare}><em>Ordin de Aprobare a Regulamentelor</em></a>
+                    </div>
                 </div>
             </div>
         </MainLayout>
