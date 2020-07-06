@@ -53,7 +53,9 @@ const Main = props => (
                     },
                 ].concat()} 
             defer={false} 
-        />
+        > 
+            <html lang="ro" />
+        </Helmet>
         <Header />
             <section className="main-content">{props.children}</section>
         <Footer />
