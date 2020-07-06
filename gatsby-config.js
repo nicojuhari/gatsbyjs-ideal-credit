@@ -3,11 +3,21 @@ module.exports = {
     title: `Ideal Credit`,
     description: `Credite Rapide în Moldova`,
     author: `idealcredit.md`,
+    siteUrl: `https://idealcredit.md`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-sitemap`,
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://idealcredit.md',
+        sitemap: 'https://idealcredit.md/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }]
+      }
+    },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {

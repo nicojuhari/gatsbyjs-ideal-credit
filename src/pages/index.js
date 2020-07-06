@@ -26,8 +26,8 @@ import AboutCredits from '../comp/AboutCredits';
 export default function HomePage() {
     const seo = {
         title: 'Credite Rapide în Moldova',
-        description: 'Credite Rapide în Moldova pentru consum și business',
-        keywords: 'credite, bani, moldova, împrumuturi'
+        description: 'Credite Rapide în Moldova pentru consum și business. Credite doar cu buletinul, fără gaj',
+        keywords: 'credite, credite rapide, bani, moldova, împrumuturi'
     }
 
     return (
