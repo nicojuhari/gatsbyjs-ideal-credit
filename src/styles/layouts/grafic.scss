@@ -1,6 +1,6 @@
 .grafic {
     &-content {
-        padding: 20px;
+        padding: 20px 0;
         background-color: $mainColorDark;
         margin: 30px 0;
     }
@@ -31,11 +31,35 @@
         }
 
         &>div>div{
+            
             &.rata-nr {
-                width: 25%;
+                width: 50px;
             }
-            &.rata-data, &.rata-suma {
-                width: 42.5%;
+            &.rata-data {
+                width: 100px;
+                text-align: center;
+            }
+             &.rata-suma {
+                //flex-grow: 1;
+                width: calc((100% - 130px) / 3);
+                text-align: center;
+                
+            }
+
+            &.grafic-close {
+                color: $logoColor;
+                font-size: 30px;
+                width: 36px;
+                border-radius: 50%;
+                height: 36px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                line-height: 1;
+                cursor: pointer;
+                border: 2px solid $logoColor;
+                margin-left: 1rem;
+                flex-grow: 0;
             }
         }
     }
@@ -45,18 +69,5 @@
         
     }
 
-    &-close {
-        color: $logoColor;
-        font-size: 30px;
-        width: 40px;
-        border-radius: 50%;
-        height: 36px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        line-height: 1;
-        cursor: pointer;
-        border: 2px solid $logoColor;
-        margin-left: 1rem;
-    }
+    
 }

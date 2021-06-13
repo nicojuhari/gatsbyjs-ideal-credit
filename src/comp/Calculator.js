@@ -75,10 +75,6 @@ export default function Calculator() {
 
 
     const calculatorCredit = (suma, termen) => {
-        
-        //setComisionAcordare
-        const com = calcComision(suma);
-        setComisionAcordare(com);
 
         // setPenalitateRata
         calcPenalitate(suma);
@@ -88,21 +84,17 @@ export default function Calculator() {
 
         //calc suma rate
         const graficeSume = createPlati(suma, termen, dobTarif);
-        setRataLunara(graficeSume[0]);
-
-        //calc total spre achitare
-        const totalDeAchitat = graficeSume.reduce((a, b) => a + b, 0) + com;
-        setTotalSpreAchitare(totalDeAchitat);
+        setRataLunara(graficeSume[0].credit + graficeSume[0].dobinda);
         
         //creaza grafic de achitare Data + Suma
         const graficDataSuma = payRates(graficeSume,termen);
 
         // set the final grafic to be displayed
-        setAllGrafic(graficDataSuma);
+        setAllGrafic(graficeSume);
 
         //DAE
         let guess = 0.01;
-        const calcDAE = daeCalculator(suma, todayDate(), graficDataSuma, guess) * 100;
+        const calcDAE = daeCalculator(Number(suma - calcComision(suma)), todayDate(), graficDataSuma, guess) * 100;
         setDAE(calcDAE.toFixed(2));
         
     }
@@ -112,15 +104,13 @@ export default function Calculator() {
         return formatDate(new Date());
     }
     //create array of dates and suma
-    const payRates = (totalLunarMDL, termen) => {
+    const payRates = (grafic, termen) => {
 
         let datesArray = {}
         for(var i = 0; i < termen; i++){
-            var nextMonth = addMonths(i + 1);
-            var d = formatDate(nextMonth);
-            datesArray[d] = totalLunarMDL[i];
+            datesArray[grafic[i].date] = grafic[i].credit + grafic[i].dobinda;
         }
-        return datesArray;
+        return datesArray;  
     }
 
     const createPlati = (suma, termen, dobTarif) => {
@@ -128,10 +118,19 @@ export default function Calculator() {
         let soldSuma = suma;
         let creditLunar = Math.floor(suma / termen);
         let dubindaLunarMDL;
-        let totalLunarMDL = [];
+        let graficPlati = [];
         let rest =suma % termen;
+        let nextMonth = '';
+        let totalSpreAchitare = 0;
+
+        //setComisionAcordare
+        const com = calcComision(suma);
+        setComisionAcordare(com);
         
         for(var j = 0; j < termen; j++){
+            //date
+            nextMonth = addMonths(j + 1);
+
             //Dobinda
             dubindaLunarMDL = Math.floor((soldSuma * dobTarif) / 100);
             
@@ -140,9 +139,12 @@ export default function Calculator() {
             soldSuma = soldSuma - creditLunar;
 
             //total lunar Array
-            totalLunarMDL.push(creditLunar +  dubindaLunarMDL);    
+            graficPlati.push({ credit: creditLunar, dobinda: dubindaLunarMDL, date: formatDate(nextMonth) });
+
+            totalSpreAchitare += creditLunar + dubindaLunarMDL;
         }
-        return totalLunarMDL;
+        setTotalSpreAchitare(totalSpreAchitare + com);
+        return graficPlati;
     }
 
     const toggleGrafic = () => {

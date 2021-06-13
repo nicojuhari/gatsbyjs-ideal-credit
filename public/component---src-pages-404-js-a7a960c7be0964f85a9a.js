@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[4],{w2l6:function(n,t,a){"use strict";a.r(t),a.d(t,"default",(function(){return u}));var e=a("q1tI"),o=a.n(e);function u(){return o.a.createElement("div",{className:"page-not-found"},"Pagina nu a fost găsită")}}}]);
-//# sourceMappingURL=component---src-pages-404-js-a7a960c7be0964f85a9a.js.map

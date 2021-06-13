@@ -2,27 +2,27 @@ import React from 'react'
 
 export function ToateRateleGrafic({ grafic, total, closeGrafic }) {
 
-    const graficArray = Object.entries(grafic);
+    const garficTable = grafic.map((rata, i) => {
 
-
-    const garficTable = graficArray.map((rata, i) => {
-        let date = new Date(rata[0]);
-        let formatted_date = (date.getDate() < 10 ? '0': '') + date.getDate() + "-" + (date.getMonth() < 9 ? '0': '') + (date.getMonth() + 1) + "-" + date.getFullYear();
         return (<div key={i} className="rata-lunara">
                     <div className="rata-nr">{i + 1}</div>
-                    <div className="rata-data">{formatted_date}</div>
-                    <div className="rata-suma">{rata[1]} MDL</div>
+                    <div className="rata-data">{ new Date(rata.date).toLocaleDateString('ro-RO') }</div>
+                    <div className="rata-suma">{ rata.credit }</div>
+                    <div className="rata-suma">{ rata.dobinda }</div>
+                    <div className="rata-suma">{ rata.dobinda + rata.credit }</div>
                 </div>);
     });
 
     return (
         <div className="grafic-content">
-            <h5 className="grafic-title">Graficul de Achitare</h5>
+            <h5 className="grafic-title">Graficul de Achitare (MDL)</h5>
             <div className="grafic-table">
                 <div className="table-header">
-                    <div className="rata-nr">Nr rata</div>
-                    <div className="rata-data">Data de achitare</div>
-                    <div className="rata-suma">Suma spre achitare</div>
+                    <div className="rata-nr">Nr</div>
+                    <div className="rata-data">Data</div>
+                    <div className="rata-suma">Credit</div>
+                    <div className="rata-suma">Dobinda</div>
+                    <div className="rata-suma">Total</div>
                 </div>
                 {garficTable}
                 <div className="grafic-total">
